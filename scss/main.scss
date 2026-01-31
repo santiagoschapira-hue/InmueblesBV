@@ -1,0 +1,156 @@
+@import '_variables';
+
+/* Reset global */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body */
+body {
+  background-color: $color-fondo;
+  color: $color-texto;
+  font-family: Arial, sans-serif;
+
+  main {
+    text-align: center;
+    padding: $padding-main;
+    border: $border-main;
+  }
+
+  footer {
+    padding: $padding-main;
+
+    p {
+      margin-top: $margin-top-separar;
+    }
+
+    a {
+      img {
+        &.logoInstagram,
+        &.logoFacebook {
+          width: $logo-social-size;
+          height: auto;
+        }
+      }
+    }
+  }
+}
+
+/* Header */
+header {
+  padding: $padding-header;
+
+  nav {
+    ul {
+      list-style: none;
+
+      li {
+        a {
+          color: $color-nav;
+        }
+      }
+    }
+  }
+
+  .logo {
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+/* Secciones principales */
+.casaFeliz {
+  width: $casa-feliz-width;
+  height: auto;
+  margin-top: $margin-top-separar;
+}
+
+/* Inmuebles */
+.textoMainInmuebles {
+  text-align: left;
+
+  ul {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 30px;
+    padding: 0;
+
+    li {
+      list-style: none;
+    }
+  }
+
+  @media (min-width: 768px) {
+    ul {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+}
+
+.inmueblesDetalles {
+  text-align: left;
+  color: $color-acento;
+}
+
+.casaFoto {
+  display: block;
+  margin-right: auto;
+  width: 100%;
+  max-width: $casa-foto-max-width;
+  height: auto;
+}
+
+/* Separadores */
+.separar {
+  margin-top: $margin-top-separar;
+}
+
+.separarMasChico {
+  margin-top: $margin-top-separar-chico;
+}
+
+/* Acerca de Nosotros */
+.acercaNosContactos {
+  color: $color-acento;
+}
+
+/* Imágenes interiores casas */
+.casaPorDentro,
+.fotoPatio,
+.fotoCocina,
+.fotoBaño {
+  width: 100%;
+  max-width: $casa-interior-max-width;
+  height: auto;
+}
+
+/* Grids de detalles */
+/* Grids de detalles */
+.imagenesDeLaCasa1y3 ul,
+.imagenesDeLaCasa2y4 ul {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 30px;
+  padding: 0;
+  list-style: none;
+}
+
+@media (min-width: 768px) {
+  .imagenesDeLaCasa1y3 ul {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .imagenesDeLaCasa2y4 ul {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+
+/* Contactos */
+.wpp {
+  width: $wpp-width;
+  height: auto;
+  margin-top: 20px;
+}
