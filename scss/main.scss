@@ -17,7 +17,18 @@ body {
     text-align: center;
     padding: $padding-main;
     border: $border-main;
+    animation: aparecer 0.8s ease-in;
   }
+  @keyframes aparecer {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 
   footer {
     padding: $padding-main;
@@ -42,16 +53,16 @@ body {
 header {
   padding: $padding-header;
 
-  nav {
-    ul {
+  .nav-link {
       list-style: none;
-
-      li {
-        a {
-          color: $color-nav;
-        }
-      }
-    }
+      color: $color-nav;
+      transition: color 0.2s ease;
+          &:hover{
+            color:$color-acento;
+          }
+        
+      
+    
   }
 
   .logo {
@@ -100,6 +111,10 @@ header {
   width: 100%;
   max-width: $casa-foto-max-width;
   height: auto;
+  transition: transform 0.2s ease;
+  &:hover{
+    transform: scale(1.05);
+  }
 }
 
 /* Separadores */
