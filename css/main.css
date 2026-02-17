@@ -12,12 +12,15 @@ body {
   color: whitesmoke;
   font-family: Arial, sans-serif;
 }
-body main {
+
+main {
   text-align: center;
   padding: 20px;
   border: 1px solid #555;
+  /*animacion al cargar la pagina*/
   animation: aparecer 0.8s ease-in;
 }
+
 @keyframes aparecer {
   from {
     opacity: 0;
@@ -28,13 +31,13 @@ body main {
     transform: translateY(0);
   }
 }
-body footer {
+footer {
   padding: 20px;
 }
-body footer p {
+footer p {
   margin-top: 50px;
 }
-body footer a img.logoInstagram, body footer a img.logoFacebook {
+footer a img.logoInstagram, footer a img.logoFacebook {
   width: 50px;
   height: auto;
 }
@@ -46,12 +49,17 @@ header {
 header .nav-link {
   list-style: none;
   color: #EED9C4;
+  /*transition hace que un cambio sea suave,
+  color es la propiedad a cambiar y hover detecta
+  que el cursor esta sobre los links del
+  encabezado*/
   transition: color 0.2s ease;
 }
 header .nav-link:hover {
   color: #D4AF37;
 }
-header .logo {
+
+.logo {
   max-width: 100%;
   height: auto;
 }
@@ -61,6 +69,12 @@ header .logo {
   width: 150px;
   height: auto;
   margin-top: 50px;
+  /*transition hace que un cambio sea sueve y 
+  transform es la propiedad a animar*/
+  transition: transform 0.2s ease;
+}
+.casaFeliz:hover {
+  transform: scale(1.05);
 }
 
 /* Inmuebles */
@@ -72,16 +86,18 @@ header .logo {
   grid-template-columns: 1fr;
   gap: 30px;
   padding: 0;
+  max-width: 1000px;
+  margin: 0 auto;
 }
 .textoMainInmuebles ul li {
   list-style: none;
 }
+
 @media (min-width: 768px) {
   .textoMainInmuebles ul {
     grid-template-columns: repeat(2, 1fr);
   }
 }
-
 .inmueblesDetalles {
   text-align: left;
   color: #D4AF37;
@@ -93,6 +109,8 @@ header .logo {
   width: 100%;
   max-width: 250px;
   height: auto;
+  /*transition hace que un cambio sea sueve y 
+  transform es la propiedad a animar*/
   transition: transform 0.2s ease;
 }
 .casaFoto:hover {
@@ -114,19 +132,28 @@ header .logo {
 }
 
 /* Imágenes interiores casas */
-.casaPorDentro,
+.livingCasa,
 .fotoPatio,
 .fotoCocina,
 .fotoBaño {
   width: 100%;
   max-width: 250px;
   height: auto;
+  /*transition hace que un cambio sea sueve y 
+  transform es la propiedad a animar*/
+  transition: transform 0.2s ease;
+}
+.livingCasa:hover,
+.fotoPatio:hover,
+.fotoCocina:hover,
+.fotoBaño:hover {
+  transform: scale(1.05);
 }
 
 /* Grids de detalles */
 /* Grids de detalles */
-.imagenesDeLaCasa1y3 ul,
-.imagenesDeLaCasa2y4 ul {
+.imagenes-grid-2 ul,
+.imagenes-grid-3 ul {
   display: grid;
   grid-template-columns: 1fr;
   gap: 30px;
@@ -134,11 +161,12 @@ header .logo {
   list-style: none;
 }
 
+/*diseño adaptable(responsive)*/
 @media (min-width: 768px) {
-  .imagenesDeLaCasa1y3 ul {
+  .imagenes-grid-2 ul {
     grid-template-columns: repeat(2, 1fr);
   }
-  .imagenesDeLaCasa2y4 ul {
+  .imagenes-grid-3 ul {
     grid-template-columns: repeat(3, 1fr);
   }
 }

@@ -12,11 +12,12 @@ body {
   background-color: $color-fondo;
   color: $color-texto;
   font-family: Arial, sans-serif;
-
+}
   main {
     text-align: center;
     padding: $padding-main;
     border: $border-main;
+    /*animacion al cargar la pagina*/
     animation: aparecer 0.8s ease-in;
   }
   @keyframes aparecer {
@@ -47,7 +48,7 @@ body {
       }
     }
   }
-}
+
 
 /* Header */
 header {
@@ -56,6 +57,10 @@ header {
   .nav-link {
       list-style: none;
       color: $color-nav;
+      /*transition hace que un cambio sea suave,
+      color es la propiedad a cambiar y hover detecta
+      que el cursor esta sobre los links del
+      encabezado*/
       transition: color 0.2s ease;
           &:hover{
             color:$color-acento;
@@ -64,18 +69,26 @@ header {
       
     
   }
+}
 
   .logo {
     max-width: 100%;
     height: auto;
   }
-}
+
 
 /* Secciones principales */
 .casaFeliz {
   width: $casa-feliz-width;
   height: auto;
   margin-top: $margin-top-separar;
+  /*transition hace que un cambio sea sueve y 
+  transform es la propiedad a animar*/
+  transition: transform 0.2s ease;
+  //hover detecta cuando el mouse esta por encima
+  &:hover{
+    transform: scale(1.05);
+  }
 }
 
 /* Inmuebles */
@@ -87,16 +100,18 @@ header {
     grid-template-columns: 1fr;
     gap: 30px;
     padding: 0;
-
+    max-width: 1000px;
+    margin: 0 auto;
     li {
       list-style: none;
     }
   }
 
-  @media (min-width: 768px) {
-    ul {
-      grid-template-columns: repeat(2, 1fr);
-    }
+}
+
+@media (min-width: 768px) {
+  .textoMainInmuebles ul {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
@@ -111,11 +126,15 @@ header {
   width: 100%;
   max-width: $casa-foto-max-width;
   height: auto;
+  /*transition hace que un cambio sea sueve y 
+  transform es la propiedad a animar*/
   transition: transform 0.2s ease;
+  //hover detecta cuando el mouse esta por encima
   &:hover{
     transform: scale(1.05);
   }
 }
+
 
 /* Separadores */
 .separar {
@@ -132,32 +151,39 @@ header {
 }
 
 /* Imágenes interiores casas */
-.casaPorDentro,
+.livingCasa,
 .fotoPatio,
 .fotoCocina,
 .fotoBaño {
   width: 100%;
   max-width: $casa-interior-max-width;
   height: auto;
+  /*transition hace que un cambio sea sueve y 
+  transform es la propiedad a animar*/
+  transition: transform 0.2s ease;
+  //hover detecta cuando el mouse esta por encima
+  &:hover{
+    transform: scale(1.05);
+  }
 }
 
 /* Grids de detalles */
 /* Grids de detalles */
-.imagenesDeLaCasa1y3 ul,
-.imagenesDeLaCasa2y4 ul {
+.imagenes-grid-2 ul,
+.imagenes-grid-3 ul {
   display: grid;
   grid-template-columns: 1fr;
   gap: 30px;
   padding: 0;
   list-style: none;
 }
-
+/*diseño adaptable(responsive)*/
 @media (min-width: 768px) {
-  .imagenesDeLaCasa1y3 ul {
+  .imagenes-grid-2 ul {
     grid-template-columns: repeat(2, 1fr);
   }
 
-  .imagenesDeLaCasa2y4 ul {
+  .imagenes-grid-3 ul {
     grid-template-columns: repeat(3, 1fr);
   }
 }
